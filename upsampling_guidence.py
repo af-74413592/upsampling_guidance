@@ -194,7 +194,7 @@ def upscaleing_guidence_call(
         ori_width = self.unet.config.sample_size * self.vae_scale_factor
 
         m = max(height // ori_height, width // ori_width)
-        assert m >= 2, "The scale factor should be greater than 2 at least one dimension"
+        assert m >= 2, "The target images size should be greater than 2 x original trained image size at least one dimension"
 
         # 1. Check inputs. Raise error if not correct
         self.check_inputs(
